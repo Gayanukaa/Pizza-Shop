@@ -1,4 +1,4 @@
-package com.company;
+package pizza.shop.Classes;
 
 public abstract class Customers {
     private String name;

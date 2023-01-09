@@ -1,4 +1,4 @@
-package com.company;
+package pizza.shop.Classes;
 
 public class NormalCustomer extends Customers {
     public NormalCustomer(String name) {

@@ -1,4 +1,4 @@
-package com.company;
+package pizza.shop.Classes;
 
 public class Beverages {
 
