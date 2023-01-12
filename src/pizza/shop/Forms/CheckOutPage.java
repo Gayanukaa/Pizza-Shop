@@ -258,13 +258,13 @@ public class CheckOutPage extends javax.swing.JFrame {
         int x = evt.getXOnScreen();
         int y = evt.getYOnScreen();
 
-        this.setLocation(x - xMouse, y - yMouse);
+        //this.setLocation(x - xMouse, y - yMouse);
     }//GEN-LAST:event_jPanel4MouseDragged
 
     private void jPanel4MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel4MousePressed
 
-        xMouse = evt.getX();
-        yMouse = evt.getY();
+        //xMouse = evt.getX();
+        //yMouse = evt.getY();
     }//GEN-LAST:event_jPanel4MousePressed
 
     /**
@@ -296,6 +296,7 @@ public class CheckOutPage extends javax.swing.JFrame {
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
+            @Override
             public void run() {
                 new CheckOutPage().setVisible(true);
             }
