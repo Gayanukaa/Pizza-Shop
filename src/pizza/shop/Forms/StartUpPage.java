@@ -52,6 +52,7 @@ public class StartUpPage extends javax.swing.JFrame {
 
         jButton1.setBackground(new java.awt.Color(255, 204, 102));
         jButton1.setFont(new java.awt.Font("Krungthep", 1, 18)); // NOI18N
+        jButton1.setEnabled(false);
         jButton1.setLabel("Normal Customer");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -62,6 +63,7 @@ public class StartUpPage extends javax.swing.JFrame {
         jButton2.setBackground(new java.awt.Color(255, 204, 102));
         jButton2.setFont(new java.awt.Font("Krungthep", 1, 18)); // NOI18N
         jButton2.setText("Gold Customer");
+        jButton2.setEnabled(false);
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton2ActionPerformed(evt);
@@ -70,7 +72,16 @@ public class StartUpPage extends javax.swing.JFrame {
 
         jTextField1.setBackground(new java.awt.Color(255, 204, 204));
         jTextField1.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        jTextField1.setText("Name");
+        jTextField1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField1ActionPerformed(evt);
+            }
+        });
+        jTextField1.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                jTextField1KeyReleased(evt);
+            }
+        });
 
         jLabel10.setFont(new java.awt.Font("AppleMyungjo", 0, 24)); // NOI18N
         jLabel10.setText("Enter Your Name");
@@ -220,6 +231,21 @@ public class StartUpPage extends javax.swing.JFrame {
         //xMouse = evt.getX();
         //yMouse = evt.getY();
     }//GEN-LAST:event_jPanel4MousePressed
+
+    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField1ActionPerformed
+
+    private void jTextField1KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextField1KeyReleased
+        // TODO add your handling code here:
+        if(jTextField1.getText().length()>0){
+            jButton1.setEnabled(true);
+            jButton2.setEnabled(true);
+        }else{
+            jButton1.setEnabled(false);
+            jButton2.setEnabled(false);
+        }
+    }//GEN-LAST:event_jTextField1KeyReleased
 
     /**
      * @param args the command line arguments
