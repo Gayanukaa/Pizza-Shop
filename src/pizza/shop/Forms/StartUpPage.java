@@ -4,6 +4,9 @@
  */
 package pizza.shop.Forms;
 
+import pizza.shop.Classes.GoldCustomers;
+import pizza.shop.Classes.NormalCustomer;
+
 /**
  *
  * @author gayanukaamarasuriya
@@ -201,14 +204,27 @@ public class StartUpPage extends javax.swing.JFrame {
         );
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
+        //open Beverage page
+        String name = jTextField1.getText();
+        NormalCustomer normalCustomer = new NormalCustomer(name);
+        BeveragePage bvgPg = new BeveragePage(normalCustomer);
+        bvgPg.show();
+        
+        dispose(); //close Beverage Page
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        // TODO add your handling code here:
+        //open Beverage page
+        String name = jTextField1.getText();
+        GoldCustomers goldCustomer = new GoldCustomers(name);
+        BeveragePage bvgPg = new BeveragePage(goldCustomer);
+        bvgPg.show();
+        
+        dispose(); //close Beverage Page
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton13MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton13MouseClicked
@@ -275,10 +291,8 @@ public class StartUpPage extends javax.swing.JFrame {
         //</editor-fold>
 
         /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new StartUpPage().setVisible(true);
-            }
+        java.awt.EventQueue.invokeLater(() -> {
+            new StartUpPage().setVisible(true);
         });
     }
 

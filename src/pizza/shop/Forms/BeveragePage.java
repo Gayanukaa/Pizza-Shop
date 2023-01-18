@@ -4,6 +4,9 @@
  */
 package pizza.shop.Forms;
 
+import pizza.shop.Classes.GoldCustomers;
+import pizza.shop.Classes.NormalCustomer;
+
 /**
  *
  * @author gayanukaamarasuriya
@@ -12,9 +15,26 @@ public class BeveragePage extends javax.swing.JFrame {
 
     /**
      * Creates new form BeveragePage
+     * @param normalCustomer
+     * @param goldcustomer
      */
-    public BeveragePage() {
+    NormalCustomer normalCustomer;
+    GoldCustomers goldcustomer;
+    
+    public BeveragePage(NormalCustomer normalCustomer) {
         initComponents();
+        normalCustomer = this.normalCustomer;
+        
+    }
+    
+    public BeveragePage(GoldCustomers goldcustomer) {
+        initComponents();
+        goldcustomer = this.goldcustomer;
+        
+    }
+    
+    public BeveragePage() {
+        initComponents();        
     }
 
     /**
@@ -458,6 +478,7 @@ public class BeveragePage extends javax.swing.JFrame {
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
+            @Override
             public void run() {
                 new BeveragePage().setVisible(true);
             }
