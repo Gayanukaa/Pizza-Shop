@@ -4,6 +4,8 @@
  */
 package pizza.shop.Forms;
 
+import java.awt.Color;
+import javax.swing.BorderFactory;
 import pizza.shop.Classes.GoldCustomers;
 import pizza.shop.Classes.NormalCustomer;
 
@@ -20,6 +22,8 @@ public class StartUpPage extends javax.swing.JFrame {
     
     public StartUpPage() {
         initComponents();
+        
+        getRootPane().setBorder(BorderFactory.createLineBorder(Color.black,1));
     }
 
     /**
@@ -317,8 +321,11 @@ public class StartUpPage extends javax.swing.JFrame {
         //</editor-fold>
 
         /* Create and display the form */
-        java.awt.EventQueue.invokeLater(() -> {
-            new StartUpPage().setVisible(true);
+        java.awt.EventQueue.invokeLater(new Runnable() {
+            @Override
+            public void run() {
+                new StartUpPage().setVisible(true);
+            }
         });
     }
 
