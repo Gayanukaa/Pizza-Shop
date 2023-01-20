@@ -245,11 +245,10 @@ public class StartUpPage extends javax.swing.JFrame {
     private void MenuBarMouseDragged(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_MenuBarMouseDragged
         // JFrame MouseMotionListner -> MouseDragged
         //set JFrame Location
-        setLocation(evt.getXOnScreen()-positionX,evt.getYOnScreen()-positionY);
+        setLocation(evt.getXOnScreen() -positionX, evt.getYOnScreen() -positionY);
     }//GEN-LAST:event_MenuBarMouseDragged
 
     private void MenuBarMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_MenuBarMousePressed
-
         //Frame MouseListner event - MousePressed
         //Get X and Y coordinates values
         positionX = evt.getX();
