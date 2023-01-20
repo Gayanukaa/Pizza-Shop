@@ -21,6 +21,7 @@ public class BeveragePage extends javax.swing.JFrame {
      * @param goldcustomer
      */
     int positionX = 0, positionY=0;
+    int cocacolaCount;
     
     NormalCustomer normalCustomer;
     GoldCustomers goldcustomer;
@@ -426,11 +427,19 @@ public class BeveragePage extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-        // TODO add your handling code here:
+        cocacolaCount = Integer.parseInt(jTextField2.getText());
+        if(cocacolaCount-1 >= 0){
+            jTextField2.setText(Integer.toString(cocacolaCount-1));
+        }
+        else{
+            jTextField2.setText("0");
+        }
+        
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
-        // TODO add your handling code here:
+        cocacolaCount = Integer.parseInt(jTextField2.getText());
+        jTextField2.setText(Integer.toString(cocacolaCount+1));
     }//GEN-LAST:event_jButton4ActionPerformed
 
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
