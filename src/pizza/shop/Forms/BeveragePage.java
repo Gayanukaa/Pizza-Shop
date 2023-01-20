@@ -4,6 +4,8 @@
  */
 package pizza.shop.Forms;
 
+import java.awt.Color;
+import javax.swing.BorderFactory;
 import pizza.shop.Classes.GoldCustomers;
 import pizza.shop.Classes.NormalCustomer;
 
@@ -18,6 +20,8 @@ public class BeveragePage extends javax.swing.JFrame {
      * @param normalCustomer
      * @param goldcustomer
      */
+    int positionX = 0, positionY=0;
+    
     NormalCustomer normalCustomer;
     GoldCustomers goldcustomer;
     
@@ -25,16 +29,21 @@ public class BeveragePage extends javax.swing.JFrame {
         initComponents();
         normalCustomer = this.normalCustomer;
         
+        getRootPane().setBorder(BorderFactory.createLineBorder(Color.black,1));
+        
     }
     
     public BeveragePage(GoldCustomers goldcustomer) {
         initComponents();
         goldcustomer = this.goldcustomer;
         
+        getRootPane().setBorder(BorderFactory.createLineBorder(Color.black,1));
     }
     
     public BeveragePage() {
         initComponents();        
+        
+        getRootPane().setBorder(BorderFactory.createLineBorder(Color.black,1));
     }
 
     /**
@@ -70,12 +79,13 @@ public class BeveragePage extends javax.swing.JFrame {
         jButton11 = new javax.swing.JButton();
         jButton12 = new javax.swing.JButton();
         jTextField6 = new javax.swing.JTextField();
-        jPanel4 = new javax.swing.JPanel();
-        jButton13 = new javax.swing.JButton();
-        jButton14 = new javax.swing.JButton();
+        MenuBar = new javax.swing.JPanel();
         jLabel8 = new javax.swing.JLabel();
+        jButton14 = new javax.swing.JButton();
+        jButton13 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setUndecorated(true);
 
         jPanel1.setBackground(new java.awt.Color(203, 227, 252));
 
@@ -117,111 +127,128 @@ public class BeveragePage extends javax.swing.JFrame {
         jLabel7.setFont(new java.awt.Font("AppleMyungjo", 0, 18)); // NOI18N
         jLabel7.setText("Portello ");
 
-        jButton3.setText("+");
+        jButton3.setFont(new java.awt.Font("Helvetica Neue", 1, 14)); // NOI18N
+        jButton3.setText("-");
         jButton3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton3ActionPerformed(evt);
             }
         });
 
-        jButton4.setText("-");
+        jButton4.setFont(new java.awt.Font("Helvetica Neue", 1, 14)); // NOI18N
+        jButton4.setText("+");
         jButton4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton4ActionPerformed(evt);
             }
         });
 
+        jTextField2.setEditable(false);
+        jTextField2.setFont(new java.awt.Font("Helvetica Neue", 2, 14)); // NOI18N
         jTextField2.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         jTextField2.setText("0");
 
-        jButton5.setText("+");
+        jButton5.setFont(new java.awt.Font("Helvetica Neue", 1, 14)); // NOI18N
+        jButton5.setText("-");
         jButton5.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton5ActionPerformed(evt);
             }
         });
 
-        jButton6.setText("-");
+        jButton6.setFont(new java.awt.Font("Helvetica Neue", 1, 14)); // NOI18N
+        jButton6.setText("+");
         jButton6.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton6ActionPerformed(evt);
             }
         });
 
+        jTextField3.setEditable(false);
+        jTextField3.setFont(new java.awt.Font("Helvetica Neue", 2, 14)); // NOI18N
         jTextField3.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         jTextField3.setText("0");
 
-        jButton7.setText("+");
+        jButton7.setFont(new java.awt.Font("Helvetica Neue", 1, 14)); // NOI18N
+        jButton7.setText("-");
         jButton7.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton7ActionPerformed(evt);
             }
         });
 
-        jButton8.setText("-");
+        jButton8.setFont(new java.awt.Font("Helvetica Neue", 1, 14)); // NOI18N
+        jButton8.setText("+");
         jButton8.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton8ActionPerformed(evt);
             }
         });
 
+        jTextField4.setEditable(false);
+        jTextField4.setFont(new java.awt.Font("Helvetica Neue", 2, 14)); // NOI18N
         jTextField4.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         jTextField4.setText("0");
 
-        jButton9.setText("+");
+        jButton9.setFont(new java.awt.Font("Helvetica Neue", 1, 14)); // NOI18N
+        jButton9.setText("-");
         jButton9.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton9ActionPerformed(evt);
             }
         });
 
-        jButton10.setText("-");
+        jButton10.setFont(new java.awt.Font("Helvetica Neue", 1, 14)); // NOI18N
+        jButton10.setText("+");
         jButton10.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton10ActionPerformed(evt);
             }
         });
 
+        jTextField5.setEditable(false);
+        jTextField5.setFont(new java.awt.Font("Helvetica Neue", 2, 14)); // NOI18N
         jTextField5.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         jTextField5.setText("0");
 
-        jButton11.setText("+");
+        jButton11.setFont(new java.awt.Font("Helvetica Neue", 1, 14)); // NOI18N
+        jButton11.setText("-");
         jButton11.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton11ActionPerformed(evt);
             }
         });
 
-        jButton12.setText("-");
+        jButton12.setFont(new java.awt.Font("Helvetica Neue", 1, 14)); // NOI18N
+        jButton12.setText("+");
         jButton12.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton12ActionPerformed(evt);
             }
         });
 
+        jTextField6.setEditable(false);
+        jTextField6.setFont(new java.awt.Font("Helvetica Neue", 2, 14)); // NOI18N
         jTextField6.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         jTextField6.setText("0");
 
-        jPanel4.setBackground(new java.awt.Color(155, 204, 236));
-        jPanel4.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
+        MenuBar.setBackground(new java.awt.Color(155, 204, 236));
+        MenuBar.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
             public void mouseDragged(java.awt.event.MouseEvent evt) {
-                jPanel4MouseDragged(evt);
+                MenuBarMouseDragged(evt);
             }
         });
-        jPanel4.addMouseListener(new java.awt.event.MouseAdapter() {
+        MenuBar.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mousePressed(java.awt.event.MouseEvent evt) {
-                jPanel4MousePressed(evt);
+                MenuBarMousePressed(evt);
             }
         });
 
-        jButton13.setText("X");
-        jButton13.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jButton13MouseClicked(evt);
-            }
-        });
+        jLabel8.setFont(new java.awt.Font("Mshtakan", 1, 14)); // NOI18N
+        jLabel8.setText("Beverage Screen");
 
-        jButton14.setFont(new java.awt.Font("Helvetica Neue", 1, 13)); // NOI18N
+        jButton14.setBackground(new java.awt.Color(153, 204, 255));
+        jButton14.setFont(new java.awt.Font("Helvetica Neue", 1, 18)); // NOI18N
         jButton14.setText("-");
         jButton14.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -229,29 +256,38 @@ public class BeveragePage extends javax.swing.JFrame {
             }
         });
 
-        jLabel8.setFont(new java.awt.Font("Mshtakan", 1, 14)); // NOI18N
-        jLabel8.setText("Beverage Screen");
+        jButton13.setBackground(new java.awt.Color(255, 51, 0));
+        jButton13.setFont(new java.awt.Font("Helvetica Neue", 1, 10)); // NOI18N
+        jButton13.setForeground(new java.awt.Color(255, 255, 255));
+        jButton13.setText("X");
+        jButton13.setPreferredSize(new java.awt.Dimension(24, 24));
+        jButton13.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton13MouseClicked(evt);
+            }
+        });
 
-        javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
-        jPanel4.setLayout(jPanel4Layout);
-        jPanel4Layout.setHorizontalGroup(
-            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
+        javax.swing.GroupLayout MenuBarLayout = new javax.swing.GroupLayout(MenuBar);
+        MenuBar.setLayout(MenuBarLayout);
+        MenuBarLayout.setHorizontalGroup(
+            MenuBarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, MenuBarLayout.createSequentialGroup()
                 .addGap(15, 15, 15)
                 .addComponent(jLabel8)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jButton14, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jButton14, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jButton13, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
+                .addComponent(jButton13, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(14, 14, 14))
         );
-        jPanel4Layout.setVerticalGroup(
-            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel4Layout.createSequentialGroup()
+        MenuBarLayout.setVerticalGroup(
+            MenuBarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(MenuBarLayout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel8, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jButton14, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(MenuBarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(MenuBarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(jLabel8, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jButton14, javax.swing.GroupLayout.DEFAULT_SIZE, 32, Short.MAX_VALUE))
                     .addComponent(jButton13, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
         );
@@ -270,7 +306,7 @@ public class BeveragePage extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jButton1)
                 .addGap(113, 113, 113))
-            .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(MenuBar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(jPanel1Layout.createSequentialGroup()
                     .addGap(84, 84, 84)
@@ -317,10 +353,10 @@ public class BeveragePage extends javax.swing.JFrame {
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(MenuBar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 300, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 291, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButton2)
                     .addComponent(jButton1))
@@ -378,6 +414,7 @@ public class BeveragePage extends javax.swing.JFrame {
         );
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
@@ -428,26 +465,25 @@ public class BeveragePage extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton12ActionPerformed
 
-    private void jButton13MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton13MouseClicked
-        System.exit(0);
-    }//GEN-LAST:event_jButton13MouseClicked
+    private void MenuBarMouseDragged(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_MenuBarMouseDragged
+        // JFrame MouseMotionListner -> MouseDragged
+        //set JFrame Location
+        setLocation(evt.getXOnScreen() -positionX, evt.getYOnScreen() -positionY);
+    }//GEN-LAST:event_MenuBarMouseDragged
+
+    private void MenuBarMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_MenuBarMousePressed
+
+        positionX = evt.getX();
+        positionY = evt.getY();
+    }//GEN-LAST:event_MenuBarMousePressed
 
     private void jButton14ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton14ActionPerformed
         this.setState(ICONIFIED);
     }//GEN-LAST:event_jButton14ActionPerformed
 
-    private void jPanel4MouseDragged(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel4MouseDragged
-        int x = evt.getXOnScreen();
-        int y = evt.getYOnScreen();
-
-        //this.setLocation(x - xMouse, y - yMouse);
-    }//GEN-LAST:event_jPanel4MouseDragged
-
-    private void jPanel4MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel4MousePressed
-
-        //xMouse = evt.getX();
-        //yMouse = evt.getY();
-    }//GEN-LAST:event_jPanel4MousePressed
+    private void jButton13MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton13MouseClicked
+        System.exit(0);
+    }//GEN-LAST:event_jButton13MouseClicked
 
     /**
      * @param args the command line arguments
@@ -486,6 +522,7 @@ public class BeveragePage extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JPanel MenuBar;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton10;
     private javax.swing.JButton jButton11;
@@ -508,7 +545,6 @@ public class BeveragePage extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel4;
     private javax.swing.JTextField jTextField2;
     private javax.swing.JTextField jTextField3;
     private javax.swing.JTextField jTextField4;
