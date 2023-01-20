@@ -6,6 +6,7 @@ package pizza.shop.Forms;
 
 import java.awt.Color;
 import javax.swing.BorderFactory;
+import pizza.shop.Classes.Beverages;
 import pizza.shop.Classes.GoldCustomers;
 import pizza.shop.Classes.NormalCustomer;
 
@@ -17,32 +18,33 @@ public class BeveragePage extends javax.swing.JFrame {
 
     /**
      * Creates new form BeveragePage
-     * @param normalCustomer
-     * @param goldcustomer
      */
-    int positionX = 0, positionY=0;
+    int positionX = 0, positionY = 0;
     int cocacolaCount, spriteCount, fantaCount, pepsiCount, portelloCount;
     
     NormalCustomer normalCustomer;
     GoldCustomers goldcustomer;
+    String customerType = "N";
     
     public BeveragePage(NormalCustomer normalCustomer) {
         initComponents();
         normalCustomer = this.normalCustomer;
+        customerType = "N";
         
         getRootPane().setBorder(BorderFactory.createLineBorder(Color.black,1));
-        
     }
     
     public BeveragePage(GoldCustomers goldcustomer) {
         initComponents();
         goldcustomer = this.goldcustomer;
+        customerType = "G";
         
         getRootPane().setBorder(BorderFactory.createLineBorder(Color.black,1));
     }
     
     public BeveragePage() {
         initComponents();        
+        customerType = "N";
         
         getRootPane().setBorder(BorderFactory.createLineBorder(Color.black,1));
     }
@@ -423,11 +425,86 @@ public class BeveragePage extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
+        //open Nonveg Pizza page
+        cocacolaCount = Integer.parseInt(jTextField2.getText());
+        spriteCount = Integer.parseInt(jTextField3.getText());
+        fantaCount = Integer.parseInt(jTextField4.getText());
+        pepsiCount = Integer.parseInt(jTextField5.getText());
+        portelloCount = Integer.parseInt(jTextField6.getText());
+        
+        int a,b,c,d,e;
+        a = b = c = d = e = 0;
+        
+        while(a < cocacolaCount){
+            Beverages beverage = new Beverages("Cocacola");
+            if(customerType.equals("G")){
+                goldcustomer.addDrinks(beverage);
+            }
+            else if(customerType.equals("N")){
+                normalCustomer.addDrinks(beverage);
+            }
+            a++;
+        }
+        while(b < spriteCount){
+            Beverages beverage = new Beverages("Sprite");
+            if(customerType.equals("G")){
+                goldcustomer.addDrinks(beverage);
+            }
+            else if(customerType.equals("N")){
+                normalCustomer.addDrinks(beverage);
+            }
+            b++;
+        }
+        while(c < fantaCount){
+            Beverages beverage = new Beverages("Fanta");
+            if(customerType.equals("G")){
+                goldcustomer.addDrinks(beverage);
+            }
+            else if(customerType.equals("N")){
+                normalCustomer.addDrinks(beverage);
+            }
+            c++;
+        }
+        while(d < pepsiCount){
+            Beverages beverage = new Beverages("Pepsi");
+            if(customerType.equals("G")){
+                goldcustomer.addDrinks(beverage);
+            }
+            else if(customerType.equals("N")){
+                normalCustomer.addDrinks(beverage);
+            }
+            d++;
+        }
+        while(e < portelloCount){
+            Beverages beverage = new Beverages("Portello");
+            if(customerType.equals("G")){
+                goldcustomer.addDrinks(beverage);
+            }
+            else if(customerType.equals("N")){
+                normalCustomer.addDrinks(beverage);
+            }
+            e++;
+        }
+        
+        if(customerType.equals("G")){
+            NonVegPizzaPage nonVegPizzaPg = new NonVegPizzaPage(goldcustomer);
+            nonVegPizzaPg.show();
+            dispose(); //close StartUp Page
+        }
+        else if(customerType.equals("N")){
+            NonVegPizzaPage nonVegPizzaPg = new NonVegPizzaPage(normalCustomer);
+            nonVegPizzaPg.show();
+            dispose(); //close StartUp Page
+
+        }
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        // TODO add your handling code here:
+        //Go back to Start page
+        StartUpPage stUpPg = new StartUpPage();
+        stUpPg.show();
+        
+        dispose(); //close Beverage Page
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed

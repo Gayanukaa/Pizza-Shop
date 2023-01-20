@@ -4,6 +4,11 @@
  */
 package pizza.shop.Forms;
 
+import java.awt.Color;
+import javax.swing.BorderFactory;
+import pizza.shop.Classes.GoldCustomers;
+import pizza.shop.Classes.NormalCustomer;
+
 /**
  *
  * @author gayanukaamarasuriya
@@ -13,8 +18,31 @@ public class NonVegPizzaPage extends javax.swing.JFrame {
     /**
      * Creates new form NonVegPizzaPage
      */
+    
+    int positionX = 0, positionY = 0;
+    
+    NormalCustomer normalCustomer;
+    GoldCustomers goldcustomer;
+    String customerType = "N";
+    
     public NonVegPizzaPage() {
         initComponents();
+    }
+
+    NonVegPizzaPage(GoldCustomers goldcustomer) {
+        initComponents();
+        goldcustomer = this.goldcustomer;
+        customerType = "G";
+        
+        getRootPane().setBorder(BorderFactory.createLineBorder(Color.black,1));
+    }
+
+    NonVegPizzaPage(NormalCustomer normalCustomer) {
+        initComponents();
+        normalCustomer = this.normalCustomer;
+        customerType = "N";
+        
+        getRootPane().setBorder(BorderFactory.createLineBorder(Color.black,1));
     }
 
     /**

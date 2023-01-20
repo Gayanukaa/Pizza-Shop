@@ -221,7 +221,7 @@ public class StartUpPage extends javax.swing.JFrame {
         BeveragePage bvgPg = new BeveragePage(normalCustomer);
         bvgPg.show();
         
-        dispose(); //close Beverage Page
+        dispose(); //close StartUp Page
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
@@ -231,7 +231,7 @@ public class StartUpPage extends javax.swing.JFrame {
         BeveragePage bvgPg = new BeveragePage(goldCustomer);
         bvgPg.show();
         
-        dispose(); //close Beverage Page
+        dispose(); //close StartUp Page
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton13MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton13MouseClicked
