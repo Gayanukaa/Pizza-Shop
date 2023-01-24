@@ -26,7 +26,7 @@ public class BeveragePage extends javax.swing.JFrame {
     
     private NormalCustomer normalCustomer;
     private GoldCustomers goldcustomer;
-    String customerType = "N";
+    String customerType;
     
     public BeveragePage(NormalCustomer normalCustomer) {
         initComponents();
@@ -427,7 +427,6 @@ public class BeveragePage extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        //open Nonveg Pizza page
         cocacolaCount = Integer.parseInt(jTextField2.getText());
         spriteCount = Integer.parseInt(jTextField3.getText());
         fantaCount = Integer.parseInt(jTextField4.getText());
@@ -488,16 +487,16 @@ public class BeveragePage extends javax.swing.JFrame {
             e++;
         }
         
+        //open NonVeg page
         if(customerType.equals("G")){
             NonVegPizzaPage nonVegPizzaPg = new NonVegPizzaPage(goldcustomer);
             nonVegPizzaPg.show();
-            dispose(); //close StartUp Page
+            dispose(); //close Beverage Page
         }
         else if(customerType.equals("N")){
             NonVegPizzaPage nonVegPizzaPg = new NonVegPizzaPage(normalCustomer);
             nonVegPizzaPg.show();
-            dispose(); //close StartUp Page
-
+            dispose(); //close Beverage Page
         }
     }//GEN-LAST:event_jButton1ActionPerformed
 
