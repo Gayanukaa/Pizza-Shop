@@ -590,7 +590,6 @@ public class BeveragePage extends javax.swing.JFrame {
     }//GEN-LAST:event_MenuBarMouseDragged
 
     private void MenuBarMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_MenuBarMousePressed
-
         positionX = evt.getX();
         positionY = evt.getY();
     }//GEN-LAST:event_MenuBarMousePressed
