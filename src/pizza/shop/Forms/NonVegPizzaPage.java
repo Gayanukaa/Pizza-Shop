@@ -317,11 +317,38 @@ public class NonVegPizzaPage extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
+        String size = (String)jComboBox1.getSelectedItem();
+        String crust = (String)jComboBox2.getSelectedItem();
+        
+        if(!size.equals("Select") && !crust.equals("Select")){
+            NonVegPizza nonVegPizza = new NonVegPizza(size, crust);
+            if(jRadioButton1.isSelected()) {nonVegPizza.addTopping("Chicken"); }
+            if(jRadioButton2.isSelected()){ nonVegPizza.addTopping("Fish"); }
+            if(jRadioButton3.isSelected()){ nonVegPizza.addTopping("Mutton"); }
+            if(jRadioButton4.isSelected()){ nonVegPizza.addTopping("Beef"); }
+            if(jRadioButton5.isSelected()){ nonVegPizza.addTopping("Mushroom"); }
+            if(jRadioButton6.isSelected()){ nonVegPizza.addTopping("Pork"); }
+            if(jRadioButton7.isSelected()){ nonVegPizza.addTopping("Chilli"); }
+            if(jRadioButton8.isSelected()){ nonVegPizza.addTopping("Tomatoes"); }
+            
+            if(customerType.equals("G")){
+                goldCustomer.addNVegPizza(nonVegPizza);
+                NonVegPizzaPage nonVegPizzaPg = new NonVegPizzaPage(goldCustomer);
+                nonVegPizzaPg.show();
+                dispose(); //close nonVeg Pizza Page
+                //open new nonVeg Pizza Page
+            }
+            else if(customerType.equals("N")){
+                normalCustomer.addNVegPizza(nonVegPizza);
+                NonVegPizzaPage nonVegPizzaPg = new NonVegPizzaPage(normalCustomer);
+                nonVegPizzaPg.show();
+                dispose(); //close nonVeg Pizza Page
+                //open new nonVeg Pizza Page
+            }
+        }
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        // TODO add your handling code here:
         String size = (String)jComboBox1.getSelectedItem();
         String crust = (String)jComboBox2.getSelectedItem();
         
