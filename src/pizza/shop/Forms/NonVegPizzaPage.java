@@ -7,6 +7,7 @@ package pizza.shop.Forms;
 import java.awt.Color;
 import javax.swing.BorderFactory;
 import pizza.shop.Classes.GoldCustomers;
+import pizza.shop.Classes.NonVegPizza;
 import pizza.shop.Classes.NormalCustomer;
 
 /**
@@ -23,12 +24,12 @@ public class NonVegPizzaPage extends javax.swing.JFrame {
     //int cocacolaCount, spriteCount, fantaCount, pepsiCount, portelloCount;
     
     private NormalCustomer normalCustomer;
-    private GoldCustomers goldcustomer;
+    private GoldCustomers goldCustomer;
     String customerType;
 
     NonVegPizzaPage(GoldCustomers goldcustomer) {
         initComponents();
-        goldcustomer = this.goldcustomer;
+        this.goldCustomer = goldcustomer;
         customerType = "G";
         
         getRootPane().setBorder(BorderFactory.createLineBorder(Color.black,1));
@@ -36,7 +37,7 @@ public class NonVegPizzaPage extends javax.swing.JFrame {
 
     NonVegPizzaPage(NormalCustomer normalCustomer) {
         initComponents();
-        normalCustomer = this.normalCustomer;
+        this.normalCustomer = normalCustomer;
         customerType = "N";
         
         getRootPane().setBorder(BorderFactory.createLineBorder(Color.black,1));
@@ -218,17 +219,6 @@ public class NonVegPizzaPage extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addGap(109, 109, 109)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(jLabel7)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(jLabel9)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(9, 9, 9))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(jLabel10)
                         .addGap(87, 87, 87)
@@ -242,7 +232,18 @@ public class NonVegPizzaPage extends javax.swing.JFrame {
                             .addComponent(jRadioButton2)
                             .addComponent(jRadioButton3)
                             .addComponent(jRadioButton5)
-                            .addComponent(jRadioButton7))))
+                            .addComponent(jRadioButton7)))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(jLabel7)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(jLabel9)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(9, 9, 9)))
                 .addGap(44, 44, 44))
             .addComponent(MenuBar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
@@ -321,6 +322,34 @@ public class NonVegPizzaPage extends javax.swing.JFrame {
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
+        String size = (String)jComboBox1.getSelectedItem();
+        String crust = (String)jComboBox2.getSelectedItem();
+        
+        if(!size.equals("Select") && !crust.equals("Select")){
+            NonVegPizza nonVegPizza = new NonVegPizza(size, crust);
+            if(jRadioButton1.isSelected()) {nonVegPizza.addTopping("Chicken"); }
+            if(jRadioButton2.isSelected()){ nonVegPizza.addTopping("Fish"); }
+            if(jRadioButton3.isSelected()){ nonVegPizza.addTopping("Mutton"); }
+            if(jRadioButton4.isSelected()){ nonVegPizza.addTopping("Beef"); }
+            if(jRadioButton5.isSelected()){ nonVegPizza.addTopping("Mushroom"); }
+            if(jRadioButton6.isSelected()){ nonVegPizza.addTopping("Pork"); }
+            if(jRadioButton7.isSelected()){ nonVegPizza.addTopping("Chilli"); }
+            if(jRadioButton8.isSelected()){ nonVegPizza.addTopping("Tomatoes"); }
+            
+            if(customerType.equals("G")){
+                goldCustomer.addNVegPizza(nonVegPizza);
+                VegPizzaPage vegPizzaPg = new VegPizzaPage(goldCustomer);
+                vegPizzaPg.show();
+                dispose(); //close nonVeg Pizza Page
+            }
+            else if(customerType.equals("N")){
+                normalCustomer.addNVegPizza(nonVegPizza);
+                
+                VegPizzaPage vegPizzaPg = new VegPizzaPage(normalCustomer);
+                vegPizzaPg.show();
+                dispose(); //close nonVeg Pizza Page
+            }
+        }
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void MenuBarMouseDragged(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_MenuBarMouseDragged

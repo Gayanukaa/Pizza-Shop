@@ -4,6 +4,9 @@
  */
 package pizza.shop.Forms;
 
+import pizza.shop.Classes.GoldCustomers;
+import pizza.shop.Classes.NormalCustomer;
+
 /**
  *
  * @author gayanukaamarasuriya
@@ -13,9 +16,27 @@ public class VegPizzaPage extends javax.swing.JFrame {
     /**
      * Creates new form VegPizzaPage
      */
+    
+    private NormalCustomer normalCustomer;
+    private GoldCustomers goldCustomer;
+    String customerType;
+    
     public VegPizzaPage() {
         initComponents();
     }
+
+    VegPizzaPage(NormalCustomer normalCustomer) {
+        initComponents();
+        
+        this.normalCustomer = normalCustomer;
+        customerType = "N";
+    }
+
+    VegPizzaPage(GoldCustomers goldcustomer) {
+        initComponents();
+        
+        this.goldCustomer = goldcustomer;
+        customerType = "G";    }
 
     /**
      * This method is called from within the constructor to initialize the form.
