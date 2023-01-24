@@ -21,9 +21,9 @@ public class NonVegPizzaPage extends javax.swing.JFrame {
     
     int positionX = 0, positionY = 0;
     
-    NormalCustomer normalCustomer;
-    GoldCustomers goldcustomer;
-    String customerType = "N";
+    private NormalCustomer normalCustomer;
+    private GoldCustomers goldcustomer;
+    private String customerType = "N";
     
     public NonVegPizzaPage() {
         initComponents();

@@ -18,17 +18,19 @@ public class BeveragePage extends javax.swing.JFrame {
 
     /**
      * Creates new form BeveragePage
+     * @param normalCustomer
+     * @param goldcustomer
      */
     int positionX = 0, positionY = 0;
     int cocacolaCount, spriteCount, fantaCount, pepsiCount, portelloCount;
     
-    NormalCustomer normalCustomer;
-    GoldCustomers goldcustomer;
+    private NormalCustomer normalCustomer;
+    private GoldCustomers goldcustomer;
     String customerType = "N";
     
     public BeveragePage(NormalCustomer normalCustomer) {
         initComponents();
-        normalCustomer = this.normalCustomer;
+        this.normalCustomer = normalCustomer;
         customerType = "N";
         
         getRootPane().setBorder(BorderFactory.createLineBorder(Color.black,1));
@@ -36,7 +38,7 @@ public class BeveragePage extends javax.swing.JFrame {
     
     public BeveragePage(GoldCustomers goldcustomer) {
         initComponents();
-        goldcustomer = this.goldcustomer;
+        this.goldcustomer = goldcustomer;
         customerType = "G";
         
         getRootPane().setBorder(BorderFactory.createLineBorder(Color.black,1));
