@@ -8,6 +8,7 @@ import java.awt.Color;
 import javax.swing.BorderFactory;
 import pizza.shop.Classes.GoldCustomers;
 import pizza.shop.Classes.NormalCustomer;
+import pizza.shop.Classes.VegPizza;
 
 /**
  *
@@ -66,7 +67,7 @@ public class VegPizzaPage extends javax.swing.JFrame {
         jRadioButton2 = new javax.swing.JRadioButton();
         jRadioButton3 = new javax.swing.JRadioButton();
         jRadioButton4 = new javax.swing.JRadioButton();
-        jRadioButton6 = new javax.swing.JRadioButton();
+        jRadioButton5 = new javax.swing.JRadioButton();
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
         MenuBar = new javax.swing.JPanel();
@@ -113,8 +114,8 @@ public class VegPizzaPage extends javax.swing.JFrame {
         jRadioButton4.setFont(new java.awt.Font("Helvetica Neue", 0, 16)); // NOI18N
         jRadioButton4.setText("Tomatoes");
 
-        jRadioButton6.setFont(new java.awt.Font("Helvetica Neue", 0, 16)); // NOI18N
-        jRadioButton6.setText("Onion");
+        jRadioButton5.setFont(new java.awt.Font("Helvetica Neue", 0, 16)); // NOI18N
+        jRadioButton5.setText("Onion");
 
         jButton1.setBackground(new java.awt.Color(255, 204, 102));
         jButton1.setFont(new java.awt.Font("Krungthep", 1, 18)); // NOI18N
@@ -223,7 +224,7 @@ public class VegPizzaPage extends javax.swing.JFrame {
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addGap(87, 87, 87)
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jRadioButton6)
+                                    .addComponent(jRadioButton5)
                                     .addComponent(jRadioButton4)
                                     .addComponent(jRadioButton1))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 33, Short.MAX_VALUE)
@@ -265,7 +266,7 @@ public class VegPizzaPage extends javax.swing.JFrame {
                     .addComponent(jRadioButton4)
                     .addComponent(jRadioButton3))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jRadioButton6)
+                .addComponent(jRadioButton5)
                 .addGap(57, 57, 57)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButton2)
@@ -295,7 +296,31 @@ public class VegPizzaPage extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        // TODO add your handling code here:
+        String size = (String)jComboBox1.getSelectedItem();
+        String crust = (String)jComboBox2.getSelectedItem();
+        
+        if(!size.equals("Select") && !crust.equals("Select")){
+            VegPizza vegPizza = new VegPizza(size, crust);
+            if(jRadioButton1.isSelected()) {vegPizza.addTopping("Olive"); }
+            if(jRadioButton2.isSelected()){ vegPizza.addTopping("Mushroom"); }
+            if(jRadioButton3.isSelected()){ vegPizza.addTopping("Chilli"); }
+            if(jRadioButton4.isSelected()){ vegPizza.addTopping("Tomatoes"); }
+            if(jRadioButton5.isSelected()){ vegPizza.addTopping("Onion"); }
+            
+            if(customerType.equals("G")){
+                goldCustomer.addVegPizza(vegPizza);
+                CheckOutPage checkOutPg = new CheckOutPage(goldCustomer);
+                checkOutPg.show();
+                dispose(); //close veg Pizza Page
+            }
+            else if(customerType.equals("N")){
+                normalCustomer.addVegPizza(vegPizza);
+                
+                CheckOutPage checkOutPg = new CheckOutPage(normalCustomer);
+                checkOutPg.show();
+                dispose(); //close vg Pizza Page
+            }
+        }
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void MenuBarMouseDragged(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_MenuBarMouseDragged
@@ -370,6 +395,6 @@ public class VegPizzaPage extends javax.swing.JFrame {
     private javax.swing.JRadioButton jRadioButton2;
     private javax.swing.JRadioButton jRadioButton3;
     private javax.swing.JRadioButton jRadioButton4;
-    private javax.swing.JRadioButton jRadioButton6;
+    private javax.swing.JRadioButton jRadioButton5;
     // End of variables declaration//GEN-END:variables
 }

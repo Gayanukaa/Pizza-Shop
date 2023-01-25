@@ -4,6 +4,11 @@
  */
 package pizza.shop.Forms;
 
+import java.awt.Color;
+import javax.swing.BorderFactory;
+import pizza.shop.Classes.GoldCustomers;
+import pizza.shop.Classes.NormalCustomer;
+
 /**
  *
  * @author gayanukaamarasuriya
@@ -13,8 +18,31 @@ public class CheckOutPage extends javax.swing.JFrame {
     /**
      * Creates new form CheckOutPage
      */
+    
+    private NormalCustomer normalCustomer;
+    private GoldCustomers goldCustomer;
+    String customerType;
+    
+    CheckOutPage(NormalCustomer normalCustomer) {
+        initComponents();
+        this.normalCustomer = normalCustomer;
+        customerType = "N";
+        
+        getRootPane().setBorder(BorderFactory.createLineBorder(Color.black,1));
+    }
+
+    CheckOutPage(GoldCustomers goldcustomer) {
+        initComponents();
+        this.goldCustomer = goldcustomer;
+        customerType = "G";    
+    
+        getRootPane().setBorder(BorderFactory.createLineBorder(Color.black,1));
+    }
+
     public CheckOutPage() {
         initComponents();
+        
+        getRootPane().setBorder(BorderFactory.createLineBorder(Color.black,1));
     }
 
     /**
