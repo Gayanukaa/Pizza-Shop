@@ -8,6 +8,7 @@ import java.awt.Color;
 import javax.swing.BorderFactory;
 import pizza.shop.Classes.GoldCustomers;
 import pizza.shop.Classes.NormalCustomer;
+import static pizza.shop.Classes.Pizza.getPizzaCount;
 
 /**
  *
@@ -90,6 +91,7 @@ public class CheckOutPage extends javax.swing.JFrame {
         jTextField1.setEditable(false);
 
         jTextField2.setEditable(false);
+        jTextField2.setHorizontalAlignment(javax.swing.JTextField.CENTER);
 
         deliveryButton.setBackground(new java.awt.Color(255, 204, 0));
         deliveryButton.setFont(new java.awt.Font("Helvetica Neue", 1, 22)); // NOI18N
@@ -271,7 +273,8 @@ public class CheckOutPage extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
-        // TODO add your handling code here:
+        String pizzaCount = getPizzaCount();
+        jTextField2.setText(pizzaCount);
     }//GEN-LAST:event_jButton4ActionPerformed
 
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed

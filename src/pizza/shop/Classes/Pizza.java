@@ -43,5 +43,7 @@ public abstract class Pizza{
     public abstract void addTopping(String topping);  //method to choose topping
 
     //method to show pizza count
-    public  static void showPizzaCount() {System.out.println("Pizza Count for " + todayDate +  " is: " + pizzaCount);}
+    public static void showPizzaCount() {System.out.println("Pizza Count for " + todayDate +  " is: " + pizzaCount);}
+    
+    public static String getPizzaCount() {return("Pizza Count for " + todayDate +  " is: " + pizzaCount);}
 }
