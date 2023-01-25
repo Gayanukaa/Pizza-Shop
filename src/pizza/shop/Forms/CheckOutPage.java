@@ -18,6 +18,7 @@ public class CheckOutPage extends javax.swing.JFrame {
     /**
      * Creates new form CheckOutPage
      */
+    int positionX = 0, positionY = 0;
     
     private NormalCustomer normalCustomer;
     private GoldCustomers goldCustomer;
@@ -56,6 +57,7 @@ public class CheckOutPage extends javax.swing.JFrame {
 
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
+        pickupButton = new javax.swing.JRadioButton();
         jTextField1 = new javax.swing.JTextField();
         jTextField2 = new javax.swing.JTextField();
         deliveryButton = new javax.swing.JRadioButton();
@@ -66,15 +68,24 @@ public class CheckOutPage extends javax.swing.JFrame {
         jLabel4 = new javax.swing.JLabel();
         jButton13 = new javax.swing.JButton();
         jButton14 = new javax.swing.JButton();
-        pickupButton = new javax.swing.JRadioButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setUndecorated(true);
 
         jPanel1.setBackground(new java.awt.Color(211, 211, 211));
 
         jLabel1.setBackground(new java.awt.Color(0, 0, 0));
         jLabel1.setFont(new java.awt.Font("Mshtakan", 1, 42)); // NOI18N
         jLabel1.setText("Check Out Counter");
+
+        pickupButton.setBackground(new java.awt.Color(255, 204, 0));
+        pickupButton.setFont(new java.awt.Font("Helvetica Neue", 1, 22)); // NOI18N
+        pickupButton.setText("PickUp");
+        pickupButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                pickupButtonActionPerformed(evt);
+            }
+        });
 
         jTextField1.setEditable(false);
 
@@ -83,6 +94,11 @@ public class CheckOutPage extends javax.swing.JFrame {
         deliveryButton.setBackground(new java.awt.Color(255, 204, 0));
         deliveryButton.setFont(new java.awt.Font("Helvetica Neue", 1, 22)); // NOI18N
         deliveryButton.setText("Delivery");
+        deliveryButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                deliveryButtonActionPerformed(evt);
+            }
+        });
 
         jButton3.setBackground(new java.awt.Color(255, 204, 102));
         jButton3.setFont(new java.awt.Font("Krungthep", 1, 18)); // NOI18N
@@ -176,10 +192,6 @@ public class CheckOutPage extends javax.swing.JFrame {
                         .addGap(12, 12, 12))))
         );
 
-        pickupButton.setBackground(new java.awt.Color(255, 204, 0));
-        pickupButton.setFont(new java.awt.Font("Helvetica Neue", 1, 22)); // NOI18N
-        pickupButton.setText("PickUp");
-
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -251,6 +263,7 @@ public class CheckOutPage extends javax.swing.JFrame {
         );
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
@@ -266,16 +279,14 @@ public class CheckOutPage extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton5ActionPerformed
 
     private void MenuBarMouseDragged(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_MenuBarMouseDragged
-        int x = evt.getXOnScreen();
-        int y = evt.getYOnScreen();
-
-        //this.setLocation(x - xMouse, y - yMouse);
+        // JFrame MouseMotionListner -> MouseDragged
+        //set JFrame Location
+        setLocation(evt.getXOnScreen() -positionX, evt.getYOnScreen() -positionY);
     }//GEN-LAST:event_MenuBarMouseDragged
 
     private void MenuBarMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_MenuBarMousePressed
-
-        //xMouse = evt.getX();
-        //yMouse = evt.getY();
+        positionX = evt.getX();
+        positionY = evt.getY();
     }//GEN-LAST:event_MenuBarMousePressed
 
     private void jButton13MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton13MouseClicked
@@ -285,6 +296,14 @@ public class CheckOutPage extends javax.swing.JFrame {
     private void jButton14ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton14ActionPerformed
         this.setState(ICONIFIED);
     }//GEN-LAST:event_jButton14ActionPerformed
+
+    private void deliveryButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deliveryButtonActionPerformed
+        pickupButton.setSelected(!deliveryButton.isSelected());
+    }//GEN-LAST:event_deliveryButtonActionPerformed
+
+    private void pickupButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pickupButtonActionPerformed
+        deliveryButton.setSelected(!pickupButton.isSelected());
+    }//GEN-LAST:event_pickupButtonActionPerformed
 
     /**
      * @param args the command line arguments
