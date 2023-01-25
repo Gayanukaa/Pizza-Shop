@@ -8,23 +8,19 @@ public class GoldCustomers extends Customers{
     }
 
     @Override
-    public void placeOrder(Delivery delivery) {
+    public String placeOrder(Delivery delivery) {
         if(delivery.isPossibility()) {
             this.calculateBill();
             this.setBill((int) (this.getBill() * 0.95));
-            System.out.println("Order for " + this.getNumOfFood() +" items customer " + this.getName() + " has been been place for total of Rs." + this.getBill());
-            System.out.println("Order delivered to Customer ID " + this.getCustomerId());
+            return("Order for " + this.getNumOfFood() +" items customer " + this.getName() + " has been been place for total of Rs." + this.getBill() + '\n' + "Order delivered to Customer ID " + this.getCustomerId());
         }
-        else System.out.println("Cannot Deliver. Number of items exceeded");
-        System.out.println();
+        else return("Cannot Deliver. Number of items exceeded");
     }
 
     @Override
-    public void placeOrder(PickUp pickUp) {
+    public String placeOrder(PickUp pickUp) {
         this.calculateBill();
         this.setBill((int) (this.getBill() * 0.95));
-        System.out.println("Order for " + this.getNumOfFood() +" items customer " + this.getName() + " has been been place for total of Rs." + this.getBill());
-        System.out.println("Order pickup for Customer ID " + this.getCustomerId());
-        System.out.println();
+        return("Order for " + this.getNumOfFood() +" items customer " + this.getName() + " has been been place for total of Rs." + this.getBill() + '\n' + "Order pickup for Customer ID " + this.getCustomerId());
     }
 }

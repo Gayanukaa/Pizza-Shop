@@ -47,6 +47,6 @@ public abstract class Customers {
     }
 
     //abstract methods to be declared in subclasses
-    public abstract void placeOrder(Delivery delivery);
-    public abstract void placeOrder(PickUp pickUp);
+    public abstract String placeOrder(Delivery delivery);
+    public abstract String placeOrder(PickUp pickUp);
 }
