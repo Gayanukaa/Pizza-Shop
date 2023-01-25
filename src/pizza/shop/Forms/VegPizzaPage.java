@@ -292,7 +292,32 @@ public class VegPizzaPage extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
+        String size = (String)jComboBox1.getSelectedItem();
+        String crust = (String)jComboBox2.getSelectedItem();
+        
+        if(!size.equals("Select") && !crust.equals("Select")){
+            VegPizza vegPizza = new VegPizza(size, crust);
+            if(jRadioButton1.isSelected()) {vegPizza.addTopping("Olive"); }
+            if(jRadioButton2.isSelected()){ vegPizza.addTopping("Mushroom"); }
+            if(jRadioButton3.isSelected()){ vegPizza.addTopping("Chilli"); }
+            if(jRadioButton4.isSelected()){ vegPizza.addTopping("Tomatoes"); }
+            if(jRadioButton5.isSelected()){ vegPizza.addTopping("Onion"); }
+            
+            if(customerType.equals("G")){
+                goldCustomer.addVegPizza(vegPizza);
+                VegPizzaPage vegPizzaPg = new VegPizzaPage(goldCustomer);
+                vegPizzaPg.show();
+                dispose(); //close veg Pizza Page
+                //open new veg Pizza Page
+            }
+            else if(customerType.equals("N")){
+                normalCustomer.addVegPizza(vegPizza);
+                VegPizzaPage vegPizzaPg = new VegPizzaPage(normalCustomer);
+                vegPizzaPg.show();
+                dispose(); //close veg Pizza Page
+                //open new veg Pizza Page
+            }
+        }
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
