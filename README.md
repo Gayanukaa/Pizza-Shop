@@ -2,9 +2,7 @@
 Java OOP concept project
 
 1. Two types of customers. 
-  \\
   a. Gold Customers
-  \\
   b. Normal Customers
 2. Pizza and beverages are sold in pizza shop.
 3. Two types of pizza
