@@ -6,8 +6,11 @@ package pizza.shop.Forms;
 
 import java.awt.Color;
 import javax.swing.BorderFactory;
+import javax.swing.JTextField;
+import pizza.shop.Classes.Delivery;
 import pizza.shop.Classes.GoldCustomers;
 import pizza.shop.Classes.NormalCustomer;
+import pizza.shop.Classes.PickUp;
 import static pizza.shop.Classes.Pizza.getPizzaCount;
 
 /**
@@ -62,7 +65,7 @@ public class CheckOutPage extends javax.swing.JFrame {
         jTextField1 = new javax.swing.JTextField();
         jTextField2 = new javax.swing.JTextField();
         deliveryButton = new javax.swing.JRadioButton();
-        jButton3 = new javax.swing.JButton();
+        placeOrderButton = new javax.swing.JButton();
         jButton4 = new javax.swing.JButton();
         jButton5 = new javax.swing.JButton();
         MenuBar = new javax.swing.JPanel();
@@ -90,6 +93,7 @@ public class CheckOutPage extends javax.swing.JFrame {
         });
 
         jTextField1.setEditable(false);
+        jTextField1.setHorizontalAlignment(javax.swing.JTextField.LEFT);
 
         jTextField2.setEditable(false);
         jTextField2.setHorizontalAlignment(javax.swing.JTextField.CENTER);
@@ -103,12 +107,12 @@ public class CheckOutPage extends javax.swing.JFrame {
             }
         });
 
-        jButton3.setBackground(new java.awt.Color(255, 204, 102));
-        jButton3.setFont(new java.awt.Font("Krungthep", 1, 18)); // NOI18N
-        jButton3.setText("Place Order");
-        jButton3.addActionListener(new java.awt.event.ActionListener() {
+        placeOrderButton.setBackground(new java.awt.Color(255, 204, 102));
+        placeOrderButton.setFont(new java.awt.Font("Krungthep", 1, 18)); // NOI18N
+        placeOrderButton.setText("Place Order");
+        placeOrderButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton3ActionPerformed(evt);
+                placeOrderButtonActionPerformed(evt);
             }
         });
 
@@ -174,9 +178,9 @@ public class CheckOutPage extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, MenuBarLayout.createSequentialGroup()
                 .addGap(24, 24, 24)
                 .addComponent(jLabel4)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 386, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 392, Short.MAX_VALUE)
                 .addComponent(jButton14, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jButton13, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(14, 14, 14))
         );
@@ -186,13 +190,13 @@ public class CheckOutPage extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(MenuBarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, MenuBarLayout.createSequentialGroup()
-                        .addGroup(MenuBarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jButton14, javax.swing.GroupLayout.DEFAULT_SIZE, 32, Short.MAX_VALUE)
-                            .addComponent(jLabel4))
-                        .addGap(10, 10, 10))
-                    .addGroup(MenuBarLayout.createSequentialGroup()
-                        .addComponent(jButton13, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGap(12, 12, 12))))
+                        .addComponent(jLabel4)
+                        .addGap(15, 15, 15))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, MenuBarLayout.createSequentialGroup()
+                        .addGroup(MenuBarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jButton13, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jButton14, javax.swing.GroupLayout.DEFAULT_SIZE, 32, Short.MAX_VALUE))
+                        .addGap(11, 11, 11))))
         );
 
         jButton6.setBackground(new java.awt.Color(255, 204, 102));
@@ -217,7 +221,7 @@ public class CheckOutPage extends javax.swing.JFrame {
                 .addGap(198, 198, 198))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addGap(57, 57, 57)
-                .addComponent(jButton3)
+                .addComponent(placeOrderButton)
                 .addGap(74, 74, 74)
                 .addComponent(jButton6)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -244,7 +248,7 @@ public class CheckOutPage extends javax.swing.JFrame {
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addComponent(MenuBar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(12, 12, 12)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jLabel1)
                 .addGap(19, 19, 19)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -256,9 +260,9 @@ public class CheckOutPage extends javax.swing.JFrame {
                 .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(jButton4)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED, 29, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED, 28, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton3)
+                    .addComponent(placeOrderButton)
                     .addComponent(jButton5)
                     .addComponent(jButton6))
                 .addGap(45, 45, 45))
@@ -281,9 +285,28 @@ public class CheckOutPage extends javax.swing.JFrame {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton3ActionPerformed
+    private void placeOrderButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_placeOrderButtonActionPerformed
+        if(pickupButton.isSelected()){
+            if(customerType.equals("G")){
+                PickUp pickUp = new PickUp(goldCustomer);
+                jTextField1.setText(goldCustomer.placeOrder(pickUp));
+            }
+            else if(customerType.equals("N")){
+                PickUp pickUp = new PickUp(normalCustomer);
+                jTextField1.setText(normalCustomer.placeOrder(pickUp));
+            }
+        }
+        else if(deliveryButton.isSelected()){
+            if(customerType.equals("G")){
+                Delivery delivery = new Delivery(goldCustomer);
+                jTextField1.setText(goldCustomer.placeOrder(delivery));
+            }
+            else if(customerType.equals("N")){
+                Delivery delivery = new Delivery(normalCustomer);
+                jTextField1.setText(normalCustomer.placeOrder(delivery));
+            }
+        }
+    }//GEN-LAST:event_placeOrderButtonActionPerformed
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
         String pizzaCount = getPizzaCount();
@@ -366,7 +389,6 @@ public class CheckOutPage extends javax.swing.JFrame {
     private javax.swing.JRadioButton deliveryButton;
     private javax.swing.JButton jButton13;
     private javax.swing.JButton jButton14;
-    private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton5;
     private javax.swing.JButton jButton6;
@@ -376,5 +398,6 @@ public class CheckOutPage extends javax.swing.JFrame {
     private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jTextField2;
     private javax.swing.JRadioButton pickupButton;
+    private javax.swing.JButton placeOrderButton;
     // End of variables declaration//GEN-END:variables
 }
