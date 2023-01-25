@@ -62,7 +62,6 @@ public class CheckOutPage extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         pickupButton = new javax.swing.JRadioButton();
-        jTextField1 = new javax.swing.JTextField();
         jTextField2 = new javax.swing.JTextField();
         deliveryButton = new javax.swing.JRadioButton();
         placeOrderButton = new javax.swing.JButton();
@@ -73,6 +72,8 @@ public class CheckOutPage extends javax.swing.JFrame {
         jButton13 = new javax.swing.JButton();
         jButton14 = new javax.swing.JButton();
         jButton6 = new javax.swing.JButton();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jTextArea1 = new javax.swing.JTextArea();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
@@ -91,9 +92,6 @@ public class CheckOutPage extends javax.swing.JFrame {
                 pickupButtonActionPerformed(evt);
             }
         });
-
-        jTextField1.setEditable(false);
-        jTextField1.setHorizontalAlignment(javax.swing.JTextField.LEFT);
 
         jTextField2.setEditable(false);
         jTextField2.setHorizontalAlignment(javax.swing.JTextField.CENTER);
@@ -208,6 +206,13 @@ public class CheckOutPage extends javax.swing.JFrame {
             }
         });
 
+        jTextArea1.setEditable(false);
+        jTextArea1.setBackground(new java.awt.Color(242, 242, 242));
+        jTextArea1.setColumns(20);
+        jTextArea1.setLineWrap(true);
+        jTextArea1.setRows(5);
+        jScrollPane1.setViewportView(jTextArea1);
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -233,15 +238,15 @@ public class CheckOutPage extends javax.swing.JFrame {
                         .addGap(118, 118, 118)
                         .addComponent(jLabel1))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(178, 178, 178)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 273, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 273, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(151, 151, 151)
                         .addComponent(deliveryButton)
                         .addGap(105, 105, 105)
-                        .addComponent(pickupButton)))
+                        .addComponent(pickupButton))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(178, 178, 178)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jTextField2)
+                            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 273, Short.MAX_VALUE))))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
@@ -254,8 +259,8 @@ public class CheckOutPage extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(deliveryButton)
                     .addComponent(pickupButton))
-                .addGap(30, 30, 30)
-                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
@@ -289,21 +294,21 @@ public class CheckOutPage extends javax.swing.JFrame {
         if(pickupButton.isSelected()){
             if(customerType.equals("G")){
                 PickUp pickUp = new PickUp(goldCustomer);
-                jTextField1.setText(goldCustomer.placeOrder(pickUp));
+                jTextArea1.setText(goldCustomer.placeOrder(pickUp));
             }
             else if(customerType.equals("N")){
                 PickUp pickUp = new PickUp(normalCustomer);
-                jTextField1.setText(normalCustomer.placeOrder(pickUp));
+                jTextArea1.setText(normalCustomer.placeOrder(pickUp));
             }
         }
         else if(deliveryButton.isSelected()){
             if(customerType.equals("G")){
                 Delivery delivery = new Delivery(goldCustomer);
-                jTextField1.setText(goldCustomer.placeOrder(delivery));
+                jTextArea1.setText(goldCustomer.placeOrder(delivery));
             }
             else if(customerType.equals("N")){
                 Delivery delivery = new Delivery(normalCustomer);
-                jTextField1.setText(normalCustomer.placeOrder(delivery));
+                jTextArea1.setText(normalCustomer.placeOrder(delivery));
             }
         }
     }//GEN-LAST:event_placeOrderButtonActionPerformed
@@ -395,7 +400,8 @@ public class CheckOutPage extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JTextField jTextField1;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JTextArea jTextArea1;
     private javax.swing.JTextField jTextField2;
     private javax.swing.JRadioButton pickupButton;
     private javax.swing.JButton placeOrderButton;
