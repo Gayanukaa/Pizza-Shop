@@ -376,6 +376,20 @@ public class NonVegPizzaPage extends javax.swing.JFrame {
                 dispose(); //close nonVeg Pizza Page
             }
         }
+        else if(size.equals("Select") && crust.equals("Select")){
+            System.out.println("No Non-Veg Pizzas ordered.");
+            
+            if(customerType.equals("G")){
+                VegPizzaPage vegPizzaPg = new VegPizzaPage(goldCustomer);
+                vegPizzaPg.show();
+                dispose(); //close nonVeg Pizza Page
+            }
+            else if(customerType.equals("N")){
+                VegPizzaPage vegPizzaPg = new VegPizzaPage(normalCustomer);
+                vegPizzaPg.show();
+                dispose(); //close nonVeg Pizza Page
+            }
+        }
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void MenuBarMouseDragged(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_MenuBarMouseDragged
