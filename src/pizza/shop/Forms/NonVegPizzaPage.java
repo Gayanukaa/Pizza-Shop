@@ -21,7 +21,6 @@ public class NonVegPizzaPage extends javax.swing.JFrame {
      */
     
     int positionX = 0, positionY = 0;
-    //int cocacolaCount, spriteCount, fantaCount, pepsiCount, portelloCount;
     
     private NormalCustomer normalCustomer;
     private GoldCustomers goldCustomer;

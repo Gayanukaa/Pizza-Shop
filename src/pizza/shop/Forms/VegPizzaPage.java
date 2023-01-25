@@ -4,6 +4,8 @@
  */
 package pizza.shop.Forms;
 
+import java.awt.Color;
+import javax.swing.BorderFactory;
 import pizza.shop.Classes.GoldCustomers;
 import pizza.shop.Classes.NormalCustomer;
 
@@ -16,28 +18,34 @@ public class VegPizzaPage extends javax.swing.JFrame {
     /**
      * Creates new form VegPizzaPage
      */
+    int positionX = 0, positionY = 0;
     
     private NormalCustomer normalCustomer;
     private GoldCustomers goldCustomer;
     String customerType;
-    
-    public VegPizzaPage() {
-        initComponents();
-    }
 
     VegPizzaPage(NormalCustomer normalCustomer) {
         initComponents();
-        
         this.normalCustomer = normalCustomer;
         customerType = "N";
+        
+        getRootPane().setBorder(BorderFactory.createLineBorder(Color.black,1));
     }
 
     VegPizzaPage(GoldCustomers goldcustomer) {
         initComponents();
-        
         this.goldCustomer = goldcustomer;
-        customerType = "G";    }
+        customerType = "G";    
+    
+        getRootPane().setBorder(BorderFactory.createLineBorder(Color.black,1));
+    }
 
+    public VegPizzaPage() {
+        initComponents();
+        
+        getRootPane().setBorder(BorderFactory.createLineBorder(Color.black,1));
+    }
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -61,12 +69,13 @@ public class VegPizzaPage extends javax.swing.JFrame {
         jRadioButton6 = new javax.swing.JRadioButton();
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
-        jPanel4 = new javax.swing.JPanel();
+        MenuBar = new javax.swing.JPanel();
+        jLabel8 = new javax.swing.JLabel();
         jButton13 = new javax.swing.JButton();
         jButton14 = new javax.swing.JButton();
-        jLabel8 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setUndecorated(true);
 
         jPanel1.setBackground(new java.awt.Color(204, 255, 204));
 
@@ -125,26 +134,37 @@ public class VegPizzaPage extends javax.swing.JFrame {
             }
         });
 
-        jPanel4.setBackground(new java.awt.Color(87, 210, 118));
-        jPanel4.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
+        MenuBar.setBackground(new java.awt.Color(87, 210, 118));
+        MenuBar.setPreferredSize(new java.awt.Dimension(206, 43));
+        MenuBar.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
             public void mouseDragged(java.awt.event.MouseEvent evt) {
-                jPanel4MouseDragged(evt);
+                MenuBarMouseDragged(evt);
             }
         });
-        jPanel4.addMouseListener(new java.awt.event.MouseAdapter() {
+        MenuBar.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mousePressed(java.awt.event.MouseEvent evt) {
-                jPanel4MousePressed(evt);
+                MenuBarMousePressed(evt);
             }
         });
 
+        jLabel8.setFont(new java.awt.Font("Mshtakan", 1, 14)); // NOI18N
+        jLabel8.setText("Veg Pizza Screen");
+
+        jButton13.setBackground(new java.awt.Color(255, 51, 0));
+        jButton13.setFont(new java.awt.Font("Helvetica Neue", 1, 10)); // NOI18N
+        jButton13.setForeground(new java.awt.Color(255, 255, 255));
         jButton13.setText("X");
+        jButton13.setMaximumSize(new java.awt.Dimension(29, 30));
+        jButton13.setMinimumSize(new java.awt.Dimension(29, 29));
+        jButton13.setPreferredSize(new java.awt.Dimension(24, 24));
         jButton13.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jButton13MouseClicked(evt);
             }
         });
 
-        jButton14.setFont(new java.awt.Font("Helvetica Neue", 1, 13)); // NOI18N
+        jButton14.setBackground(new java.awt.Color(153, 204, 255));
+        jButton14.setFont(new java.awt.Font("Helvetica Neue", 1, 18)); // NOI18N
         jButton14.setText("-");
         jButton14.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -152,30 +172,28 @@ public class VegPizzaPage extends javax.swing.JFrame {
             }
         });
 
-        jLabel8.setFont(new java.awt.Font("Mshtakan", 1, 14)); // NOI18N
-        jLabel8.setText("Veg Pizza Screen");
-
-        javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
-        jPanel4.setLayout(jPanel4Layout);
-        jPanel4Layout.setHorizontalGroup(
-            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
-                .addGap(15, 15, 15)
+        javax.swing.GroupLayout MenuBarLayout = new javax.swing.GroupLayout(MenuBar);
+        MenuBar.setLayout(MenuBarLayout);
+        MenuBarLayout.setHorizontalGroup(
+            MenuBarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, MenuBarLayout.createSequentialGroup()
+                .addGap(17, 17, 17)
                 .addComponent(jLabel8)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jButton14, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jButton13, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
+                .addComponent(jButton14, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jButton13, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(12, 12, 12))
         );
-        jPanel4Layout.setVerticalGroup(
-            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel4Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel8, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jButton14, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jButton13, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        MenuBarLayout.setVerticalGroup(
+            MenuBarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(MenuBarLayout.createSequentialGroup()
+                .addContainerGap(11, Short.MAX_VALUE)
+                .addGroup(MenuBarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, MenuBarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(jButton14, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jLabel8))
+                    .addComponent(jButton13, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap())
         );
 
@@ -208,27 +226,28 @@ public class VegPizzaPage extends javax.swing.JFrame {
                                     .addComponent(jRadioButton6)
                                     .addComponent(jRadioButton4)
                                     .addComponent(jRadioButton1))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 73, Short.MAX_VALUE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 33, Short.MAX_VALUE)
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jRadioButton2)
-                                    .addComponent(jRadioButton3)))
+                                    .addComponent(jRadioButton3))
+                                .addGap(40, 40, 40))
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addComponent(jButton2)
                                 .addGap(117, 117, 117))))))
+            .addComponent(MenuBar, javax.swing.GroupLayout.DEFAULT_SIZE, 629, Short.MAX_VALUE)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jLabel1)
-                .addGap(127, 127, 127))
-            .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGap(120, 120, 120))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(MenuBar, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel1)
-                .addGap(60, 60, 60)
+                .addGap(34, 34, 34)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel7)
                     .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -268,6 +287,7 @@ public class VegPizzaPage extends javax.swing.JFrame {
         );
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
@@ -278,6 +298,17 @@ public class VegPizzaPage extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton2ActionPerformed
 
+    private void MenuBarMouseDragged(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_MenuBarMouseDragged
+        // JFrame MouseMotionListner -> MouseDragged
+        //set JFrame Location
+        setLocation(evt.getXOnScreen() -positionX, evt.getYOnScreen() -positionY);
+    }//GEN-LAST:event_MenuBarMouseDragged
+
+    private void MenuBarMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_MenuBarMousePressed
+        positionX = evt.getX();
+        positionY = evt.getY();
+    }//GEN-LAST:event_MenuBarMousePressed
+
     private void jButton13MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton13MouseClicked
         System.exit(0);
     }//GEN-LAST:event_jButton13MouseClicked
@@ -285,19 +316,6 @@ public class VegPizzaPage extends javax.swing.JFrame {
     private void jButton14ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton14ActionPerformed
         this.setState(ICONIFIED);
     }//GEN-LAST:event_jButton14ActionPerformed
-
-    private void jPanel4MouseDragged(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel4MouseDragged
-        int x = evt.getXOnScreen();
-        int y = evt.getYOnScreen();
-
-        //this.setLocation(x - xMouse, y - yMouse);
-    }//GEN-LAST:event_jPanel4MouseDragged
-
-    private void jPanel4MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel4MousePressed
-
-        //xMouse = evt.getX();
-        //yMouse = evt.getY();
-    }//GEN-LAST:event_jPanel4MousePressed
 
     /**
      * @param args the command line arguments
@@ -335,6 +353,7 @@ public class VegPizzaPage extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JPanel MenuBar;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton13;
     private javax.swing.JButton jButton14;
@@ -347,7 +366,6 @@ public class VegPizzaPage extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel4;
     private javax.swing.JRadioButton jRadioButton1;
     private javax.swing.JRadioButton jRadioButton2;
     private javax.swing.JRadioButton jRadioButton3;
