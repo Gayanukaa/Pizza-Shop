@@ -339,7 +339,20 @@ public class VegPizzaPage extends javax.swing.JFrame {
             }
             else if(customerType.equals("N")){
                 normalCustomer.addVegPizza(vegPizza);
-                
+                CheckOutPage checkOutPg = new CheckOutPage(normalCustomer);
+                checkOutPg.show();
+                dispose(); //close vg Pizza Page
+            }
+        }
+        else if(size.equals("Select") && crust.equals("Select")){
+            System.out.println("No Veg Pizzas ordered.");
+            
+            if(customerType.equals("G")){
+                CheckOutPage checkOutPg = new CheckOutPage(goldCustomer);
+                checkOutPg.show();
+                dispose(); //close veg Pizza Page
+            }
+            else if(customerType.equals("N")){
                 CheckOutPage checkOutPg = new CheckOutPage(normalCustomer);
                 checkOutPg.show();
                 dispose(); //close vg Pizza Page
