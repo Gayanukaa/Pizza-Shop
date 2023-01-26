@@ -6,6 +6,7 @@ package pizza.shop.Forms;
 
 import java.awt.Color;
 import javax.swing.BorderFactory;
+import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 import pizza.shop.Classes.Delivery;
 import pizza.shop.Classes.GoldCustomers;
@@ -66,7 +67,7 @@ public class CheckOutPage extends javax.swing.JFrame {
         deliveryButton = new javax.swing.JRadioButton();
         placeOrderButton = new javax.swing.JButton();
         jButton4 = new javax.swing.JButton();
-        jButton5 = new javax.swing.JButton();
+        endButton = new javax.swing.JButton();
         MenuBar = new javax.swing.JPanel();
         jLabel4 = new javax.swing.JLabel();
         jButton13 = new javax.swing.JButton();
@@ -125,12 +126,12 @@ public class CheckOutPage extends javax.swing.JFrame {
             }
         });
 
-        jButton5.setBackground(new java.awt.Color(255, 204, 102));
-        jButton5.setFont(new java.awt.Font("Krungthep", 1, 18)); // NOI18N
-        jButton5.setText("END");
-        jButton5.addActionListener(new java.awt.event.ActionListener() {
+        endButton.setBackground(new java.awt.Color(255, 204, 102));
+        endButton.setFont(new java.awt.Font("Krungthep", 1, 18)); // NOI18N
+        endButton.setText("END");
+        endButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton5ActionPerformed(evt);
+                endButtonActionPerformed(evt);
             }
         });
 
@@ -234,7 +235,7 @@ public class CheckOutPage extends javax.swing.JFrame {
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(continueButton)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jButton5)
+                        .addComponent(endButton)
                         .addGap(142, 142, 142))))
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -274,7 +275,7 @@ public class CheckOutPage extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(continueButton)
-                    .addComponent(jButton5))
+                    .addComponent(endButton))
                 .addContainerGap(25, Short.MAX_VALUE))
         );
 
@@ -325,9 +326,10 @@ public class CheckOutPage extends javax.swing.JFrame {
         jTextField2.setText(pizzaCount);
     }//GEN-LAST:event_jButton4ActionPerformed
 
-    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton5ActionPerformed
+    private void endButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_endButtonActionPerformed
+        JOptionPane.showMessageDialog(null, "Pizza Shop Closed","Close Warning",JOptionPane.INFORMATION_MESSAGE);
+        dispose(); //close checkOut Page
+    }//GEN-LAST:event_endButtonActionPerformed
 
     private void MenuBarMouseDragged(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_MenuBarMouseDragged
         // JFrame MouseMotionListner -> MouseDragged
@@ -402,10 +404,10 @@ public class CheckOutPage extends javax.swing.JFrame {
     private javax.swing.JPanel MenuBar;
     private javax.swing.JButton continueButton;
     private javax.swing.JRadioButton deliveryButton;
+    private javax.swing.JButton endButton;
     private javax.swing.JButton jButton13;
     private javax.swing.JButton jButton14;
     private javax.swing.JButton jButton4;
-    private javax.swing.JButton jButton5;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JPanel jPanel1;
