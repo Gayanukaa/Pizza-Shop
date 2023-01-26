@@ -71,7 +71,7 @@ public class CheckOutPage extends javax.swing.JFrame {
         jLabel4 = new javax.swing.JLabel();
         jButton13 = new javax.swing.JButton();
         jButton14 = new javax.swing.JButton();
-        jButton6 = new javax.swing.JButton();
+        continueButton = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTextArea1 = new javax.swing.JTextArea();
 
@@ -199,12 +199,12 @@ public class CheckOutPage extends javax.swing.JFrame {
                         .addGap(11, 11, 11))))
         );
 
-        jButton6.setBackground(new java.awt.Color(255, 204, 102));
-        jButton6.setFont(new java.awt.Font("Krungthep", 1, 18)); // NOI18N
-        jButton6.setText("Continue");
-        jButton6.addActionListener(new java.awt.event.ActionListener() {
+        continueButton.setBackground(new java.awt.Color(255, 204, 102));
+        continueButton.setFont(new java.awt.Font("Krungthep", 1, 18)); // NOI18N
+        continueButton.setText("Continue");
+        continueButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton6ActionPerformed(evt);
+                continueButtonActionPerformed(evt);
             }
         });
 
@@ -232,7 +232,7 @@ public class CheckOutPage extends javax.swing.JFrame {
                             .addComponent(jLabel1)
                             .addGap(111, 111, 111)))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(jButton6)
+                        .addComponent(continueButton)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jButton5)
                         .addGap(142, 142, 142))))
@@ -273,7 +273,7 @@ public class CheckOutPage extends javax.swing.JFrame {
                 .addComponent(placeOrderButton)
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton6)
+                    .addComponent(continueButton)
                     .addComponent(jButton5))
                 .addContainerGap(25, Short.MAX_VALUE))
         );
@@ -356,9 +356,11 @@ public class CheckOutPage extends javax.swing.JFrame {
         deliveryButton.setSelected(!pickupButton.isSelected());
     }//GEN-LAST:event_pickupButtonActionPerformed
 
-    private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton6ActionPerformed
+    private void continueButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_continueButtonActionPerformed
+        StartUpPage startPage = new StartUpPage();
+        startPage.show();
+        dispose(); //close checkOut Page
+    }//GEN-LAST:event_continueButtonActionPerformed
 
     /**
      * @param args the command line arguments
@@ -398,12 +400,12 @@ public class CheckOutPage extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel MenuBar;
+    private javax.swing.JButton continueButton;
     private javax.swing.JRadioButton deliveryButton;
     private javax.swing.JButton jButton13;
     private javax.swing.JButton jButton14;
     private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton5;
-    private javax.swing.JButton jButton6;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JPanel jPanel1;
