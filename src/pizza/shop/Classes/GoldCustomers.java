@@ -11,7 +11,7 @@ public class GoldCustomers extends Customers{
     public String placeOrder(Delivery delivery) {
         if(delivery.isPossibility()) {
             this.calculateBill();
-            this.setBill((int) (this.getBill() * 0.95));
+            this.setBill((int)(this.getBill() * 0.95));
             return("Order for " + this.getNumOfFood() +" items customer " + this.getName() + " has been been place for total of Rs." + this.getBill() + '\n' + "Order delivered to Customer ID " + this.getCustomerId());
         }
         else return("Cannot Deliver. Number of items exceeded");

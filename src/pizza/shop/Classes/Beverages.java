@@ -2,7 +2,7 @@ package pizza.shop.Classes;
 
 public class Beverages {
 
-    private String type;
+    private final String type;
     private int bevPrice;   //bevPrice - Beverage Price
 
     public Beverages(String type) {

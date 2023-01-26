@@ -2,7 +2,7 @@ package pizza.shop.Classes;
 
 public class NonVegPizza extends Pizza{
     private String topping;
-    private int nvTpPrice = 0;  // nvTpPrice - Non-Veg Topping Price
+    private int nvTpPrice = 0;  // nvTpPrice: Non-Veg Topping Price
     private int total = 0;      //variables declared for within the class only
 
     public NonVegPizza(String size, String crust) {super(size, crust);}

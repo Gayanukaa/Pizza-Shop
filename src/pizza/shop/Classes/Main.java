@@ -1,14 +1,11 @@
 package pizza.shop.Classes;
 
-/*package com.company;
-
 import java.util.*;
-
-import static com.company.Pizza.showPizzaCount;
+import static pizza.shop.Classes.Pizza.showPizzaCount;
 
 public class Main {
 
-    public static void main(String[] args) { */
+    public static void main(String[] args) {
 
         //Choose from the following options
         //Pizza Size options: Small, Medium, Large
@@ -86,7 +83,7 @@ public class Main {
         vegPizza3.showPizzaCount();
         //nonVegPizza1.showPizzaCount(); - same result //can use any pizza created to check total
         */
-/*
+
         Scanner input = new Scanner(System.in);
         while (true) {
             System.out.println("Welcome to Pizza Shop");
@@ -266,4 +263,4 @@ public class Main {
             }
         }
     }
-}*/
+}

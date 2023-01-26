@@ -2,7 +2,7 @@ package pizza.shop.Classes;
 
 public class VegPizza extends Pizza{
     private String topping;
-    private int vTpPrice = 0;   // vTpPrice - Veg Topping Price
+    private int vTpPrice = 0;   // vTpPrice: Veg Topping Price
     private int total = 0;      //variables declared for within the class only
 
     public VegPizza(String size, String crust) {super(size, crust);}

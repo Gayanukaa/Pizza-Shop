@@ -1,7 +1,7 @@
 package pizza.shop.Classes;
 
 public abstract class Customers {
-    private String name;
+    private final String name;
     private static int customerId = 0;
     public int bill = 0;
     public int numOfFood = 0;

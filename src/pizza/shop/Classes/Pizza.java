@@ -6,9 +6,9 @@ public abstract class Pizza{
     private static int pizzaCount = 0;
     static Calendar now = new GregorianCalendar();
     private static String todayDate = now.get(Calendar.DATE) + "." + (now.get(Calendar.MONTH)+1) + "." + now.get(Calendar.YEAR);
-    private String crust;
+    private final String crust;
     private int crustPrice;
-    private String size;
+    private final String size;
     private int sizePrice;
 
     public Pizza(String size, String crust) {
