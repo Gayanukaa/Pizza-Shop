@@ -1,5 +1,5 @@
 # Pizza-Shop
-Java OOP concept project and Java Swing
+## Java OOP concept project and Java Swing
 
 Run Pizza-Shop/src/pizza/shop/Forms/StartUpPage.java
 
