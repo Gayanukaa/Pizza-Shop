@@ -1,10 +1,16 @@
 # Pizza-Shop
 ### Java OOP concept project and Java Swing
 
+Project coded using Apache NetBeans IDE 16 <br>
 Run Pizza-Shop/src/pizza/shop/Forms/StartUpPage.java
 
-Project Requirements :-
+- Each page built using JFrames
+- Non-resizable jPanel made movable clicking menu bar
+- Functional close and minimize buttons added
 
+Let me know of any improvements or errors @gayanukaamarasuriya@gmail.com or pull requests
+
+Project Requirements :-
 1. Two types of customers. <br>
   a. Gold Customers <br>
   b. Normal Customers
