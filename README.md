@@ -10,7 +10,7 @@ Run Pizza-Shop/src/pizza/shop/Forms/StartUpPage.java
 
 Let me know of any improvements or errors @gayanukaamarasuriya@gmail.com or pull requests
 
-Project Requirements :-
+<b>Project Requirements :- </b>
 1. Two types of customers. <br>
   a. Gold Customers <br>
   b. Normal Customers
