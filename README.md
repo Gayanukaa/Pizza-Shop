@@ -10,8 +10,6 @@ Execute file to run
   https://github.com/Gayanukaa/Pizza-Shop/blob/main/src/pizza/shop/Forms/StartUpPage.form
 ```
 
-Run Pizza-Shop/src/pizza/shop/Forms/StartUpPage.java
-
 - Each page built using JFrames
 - Non-resizable jPanel made movable clicking menu bar
 - Functional close and minimize buttons added
